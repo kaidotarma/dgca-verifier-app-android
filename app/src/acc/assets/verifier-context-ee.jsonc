@@ -29,27 +29,18 @@
           ]
         },
         "countryList": {
-          "url": "https://dcc-verifier.digilugu.ee/countrylist",
+          "url": "",
           "pubKeys": [
-              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
-              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
-              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
           ]
         },
         "rules": {
-          "url": "https://dcc-verifier.digilugu.ee/rules",
+          "url": "",
           "pubKeys": [
-              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
-              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
-              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
           ]
         },
         "valuesets": {
-          "url": "https://dcc-verifier.digilugu.ee/valuesets",
+          "url": "",
           "pubKeys": [
-              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
-              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
-              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
           ]
         }
       }
