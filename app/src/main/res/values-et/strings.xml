@@ -21,7 +21,7 @@
   -->
 
 <resources>
-    <string name="app_name">EST COVID Verifitseerija Äpp</string>
+    <string name="app_name">EST COVID Verifitseerimise Äpp</string>
     <string name="cert_valid">Kehtiv</string>
     <string name="cert_limited_validity">Limiteeritud kehtivus</string>
     <string name="cert_invalid">Kehtetu</string>
@@ -51,7 +51,7 @@
     <string name="last_updated">Viimati värskendatud: %s</string>
     <string name="version">Versioon: %1$s</string>
     <string name="about">Teave</string>
-    <string name="settings_version_title">Verifitseerija Äpp</string>
+    <string name="settings_version_title">Verifitseerimise Äpp</string>
     <string name="certificate_is_expired">Sertifikaat on aegunud.</string>
     <string name="certificate_was_revoked">Sertifikaat tühistati.</string>
     <string name="verification_failed">Kinnitamine ebaõnnestus.</string>
