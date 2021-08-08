@@ -53,6 +53,7 @@ import dgca.verifier.app.android.verification.certs.VaccinationViewHolder
 import dgca.verifier.app.android.verification.rules.RuleValidationResultCard
 import dgca.verifier.app.android.verification.rules.RuleValidationResultsAdapter
 import dgca.verifier.app.android.verification.rules.toRuleValidationResultCard
+import timber.log.Timber
 
 
 @ExperimentalUnsignedTypes
@@ -108,6 +109,7 @@ class VerificationDialogFragment : BottomSheetDialogFragment() {
             binding.progressBar.isVisible = it
         })
 
+        Timber.d("onViewCreated, args.qrCodeText: ${args.qrCodeText}")
         viewModel.init(args.qrCodeText, args.countryIsoCode)
     }
 
@@ -122,6 +124,8 @@ class VerificationDialogFragment : BottomSheetDialogFragment() {
         verificationData.certificateModel?.let { certificateModel ->
             binding.personFullName.text = certificateModel.getFullName()
             toggleButton(certificateModel)
+
+            Timber.d("handleVerificationResult, certificateModel: ${certificateModel}")
 
             if (verificationData.getGeneralResult() != GeneralVerificationResult.FAILED) {
                 showUserData(certificateModel)
@@ -281,6 +285,7 @@ class VerificationDialogFragment : BottomSheetDialogFragment() {
 
 
     private fun showUserData(certificate: CertificateModel) {
+        Timber.d("showUserData, certificate: ${certificate}")
         binding.personStandardisedFamilyName.text = certificate.person.standardisedFamilyName
         binding.personStandardisedGivenName.text = certificate.person.standardisedGivenName
         if (certificate.person.standardisedGivenName?.isNotBlank() == true) {
