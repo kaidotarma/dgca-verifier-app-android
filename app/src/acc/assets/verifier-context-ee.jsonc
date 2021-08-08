@@ -1,0 +1,61 @@
+{
+  "origin": "EE",
+  "versions": {
+    "default": {
+      "privacyUrl": "https://publications.europa.eu/en/web/about-us/legal-notices/eu-mobile-apps",
+      "context": {
+        "url": "https://dcc-verifier.digilugu.ee/context",
+        "pubKeys": [
+              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
+              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
+              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
+        ]
+      },
+      "endpoints": {
+        "status": {
+          "url": "https://dcc-verifier.digilugu.ee/signercertificateStatus",
+          "pubKeys": [
+              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
+              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
+              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
+          ]
+        },
+        "update": {
+          "url": "https://dcc-verifier.digilugu.ee/signercertificateUpdate",
+          "pubKeys": [
+              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
+              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
+              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
+          ]
+        },
+        "countryList": {
+          "url": "https://dcc-verifier.digilugu.ee/countrylist",
+          "pubKeys": [
+              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
+              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
+              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
+          ]
+        },
+        "rules": {
+          "url": "https://dcc-verifier.digilugu.ee/rules",
+          "pubKeys": [
+              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
+              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
+              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
+          ]
+        },
+        "valuesets": {
+          "url": "https://dcc-verifier.digilugu.ee/valuesets",
+          "pubKeys": [
+              "z5hNtsQXJIdHVS28ZjDIr6JPRQq2dlb9GZlAghDPofs=",
+              "4a6cPehI7OG6cuDZka5NDZ7FR8a60d3auda+sKfg4Ng=",
+              "x4QzPSC810K5/cMjb05Qm4k3Bw5zBn4lTdO/nEW/Td4"
+          ]
+        }
+      }
+    },
+    "1.0.0": {
+      "outdated": false
+    }
+  }
+}
