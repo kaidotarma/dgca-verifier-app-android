@@ -1,5 +1,5 @@
 <h1 align="center">
-    EU Digital COVID Certificate Verifier App - Android
+    ESTONIAN Digital COVID Certificate Verifier App - Android
 </h1>
 
 <p align="center">
