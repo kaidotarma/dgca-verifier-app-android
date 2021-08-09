@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="verification_failed_old_format">This sertificate is in the old EE format, please use the new EU format.</string>
+    <string name="verification_failed_too_many_bytes">Verification failed: Too many bytes read</string>
+    <string name="verification_failed_cose_not_decoded">Verification failed: This QR does not seem to be a valid certificate (COSE decode)</string>
+    <string name="verification_failed_cose_not_extracted">Verification failed: This QR does not seem to be a valid certificate (COSE extract)</string>
+</resources>

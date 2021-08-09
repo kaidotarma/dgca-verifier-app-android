@@ -58,6 +58,7 @@ import java.time.ZoneOffset
 import java.time.ZonedDateTime
 import java.util.*
 import javax.inject.Inject
+import dgca.verifier.app.android.R
 
 enum class GeneralVerificationResult {
     SUCCESS, FAILED, RULES_VALIDATION_FAILED
@@ -99,6 +100,9 @@ class VerificationViewModel @Inject constructor(
     private val _verificationError = MutableLiveData<VerificationError>()
     val verificationError: LiveData<VerificationError> = _verificationError
 
+    private val _verificationFailureToast = MutableLiveData<Int>()
+    val verificationFailureToast: LiveData<Int> = _verificationFailureToast
+
     private val _validationResults = MutableLiveData<List<ValidationResult>>()
     val validationResults: LiveData<List<ValidationResult>> = _validationResults
 
@@ -127,11 +131,14 @@ class VerificationViewModel @Inject constructor(
                         innerVerificationResult.base64EncodedKid!!
                     )
                 }
-
             }
 
             verificationResult.fetchError(innerVerificationResult)
                 ?.apply { _verificationError.value = this }
+
+            if (innerVerificationResult.isNotApplicableCodeReason != null) {
+                _verificationFailureToast.value = innerVerificationResult.isNotApplicableCodeReason!!
+            }
 
             _inProgress.value = false
             val certificateModel: CertificateModel? =
@@ -151,6 +158,14 @@ class VerificationViewModel @Inject constructor(
         var greenCertificateData: GreenCertificateData? = null
         var isApplicableCode = false
 
+        if (code.startsWith("https://vg.digilugu.ee/")){
+            Timber.d("Verification failed: using old format")
+            return InnerVerificationResult(
+                isApplicableCode = isApplicableCode,
+                isNotApplicableCodeReason = R.string.verification_failed_old_format
+            )
+        }
+
         val plainInput = prefixValidationService.decode(code, verificationResult)
         val compressedCose = base45Service.decode(plainInput, verificationResult)
         val cose: ByteArray? = compressorService.decode(compressedCose, verificationResult)
@@ -159,7 +174,8 @@ class VerificationViewModel @Inject constructor(
             Timber.d("Verification failed: Too many bytes read")
             return InnerVerificationResult(
                 greenCertificateData = greenCertificateData,
-                isApplicableCode = isApplicableCode
+                isApplicableCode = isApplicableCode,
+                isNotApplicableCodeReason = R.string.verification_failed_too_many_bytes
             )
         }
 
@@ -168,7 +184,8 @@ class VerificationViewModel @Inject constructor(
             Timber.d("Verification failed: COSE not decoded")
             return InnerVerificationResult(
                 greenCertificateData = greenCertificateData,
-                isApplicableCode = isApplicableCode
+                isApplicableCode = isApplicableCode,
+                isNotApplicableCodeReason = R.string.verification_failed_cose_not_decoded
             )
         }
 
@@ -177,7 +194,8 @@ class VerificationViewModel @Inject constructor(
             Timber.d("Verification failed: cannot extract kid from COSE")
             return InnerVerificationResult(
                 greenCertificateData = greenCertificateData,
-                isApplicableCode = isApplicableCode
+                isApplicableCode = isApplicableCode,
+                isNotApplicableCodeReason = R.string.verification_failed_cose_not_extracted
             )
         }
 

@@ -29,7 +29,8 @@ data class InnerVerificationResult(
     val certificateExpired: Boolean = false,
     val greenCertificateData: GreenCertificateData? = null,
     val isApplicableCode: Boolean = false,
-    val base64EncodedKid: String? = null
+    val base64EncodedKid: String? = null,
+    val isNotApplicableCodeReason: Int? = null
 ) {
     fun isValid() =
         !noPublicKeysFound && !certificateExpired && greenCertificateData != null && isApplicableCode && base64EncodedKid?.isNotBlank() == true

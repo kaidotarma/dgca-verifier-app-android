@@ -32,6 +32,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
@@ -43,10 +44,14 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
-import dgca.verifier.app.android.*
+import dgca.verifier.app.android.FORMATTED_YEAR_MONTH_DAY
+import dgca.verifier.app.android.R
+import dgca.verifier.app.android.YEAR_MONTH_DAY
 import dgca.verifier.app.android.databinding.DialogFragmentVerificationBinding
+import dgca.verifier.app.android.dpToPx
 import dgca.verifier.app.android.model.CertificateModel
 import dgca.verifier.app.android.model.TestResult
+import dgca.verifier.app.android.parseFromTo
 import dgca.verifier.app.android.verification.certs.RecoveryViewHolder
 import dgca.verifier.app.android.verification.certs.TestViewHolder
 import dgca.verifier.app.android.verification.certs.VaccinationViewHolder
@@ -104,6 +109,9 @@ class VerificationDialogFragment : BottomSheetDialogFragment() {
         })
         viewModel.verificationError.observe(viewLifecycleOwner, {
             setCertStatusError(it)
+        })
+        viewModel.verificationFailureToast.observe(viewLifecycleOwner, {
+            Toast.makeText(context, it, Toast.LENGTH_LONG).show()
         })
         viewModel.inProgress.observe(viewLifecycleOwner, {
             binding.progressBar.isVisible = it
