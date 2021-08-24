@@ -21,7 +21,7 @@
   -->
 
 <resources>
-    <string name="app_name">EST COVID-19 VAKTSINEERIMISE KONTROLL</string>
+    <string name="app_name">VAKTSINEERIMISE KONTROLL</string>
     <string name="cert_valid">Kehtiv</string>
     <string name="cert_limited_validity">Limiteeritud kehtivus</string>
     <string name="cert_invalid">Kehtetu</string>
