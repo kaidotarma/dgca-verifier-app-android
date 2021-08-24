@@ -47,12 +47,12 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            applicationIdSuffix ".est.debug"
+            applicationIdSuffix ".ee.debug"
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            applicationIdSuffix ".est"
+            applicationIdSuffix ".ee"
         }
     }
 
