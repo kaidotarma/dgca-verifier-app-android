@@ -21,7 +21,7 @@
   -->
 
 <resources>
-    <string name="app_name">VAKTSINEERIMISE KONTROLL</string>
+    <string name="app_name">Vaktsineerimise kontroll</string>
     <string name="cert_valid">Kehtiv</string>
     <string name="cert_limited_validity">Limiteeritud kehtivus</string>
     <string name="cert_invalid">Kehtetu</string>

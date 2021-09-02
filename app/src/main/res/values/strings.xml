@@ -21,7 +21,7 @@
   -->
 
 <resources>
-    <string name="app_name">VACCINATION VERIFIER</string>
+    <string name="app_name">Vaccination Verifier</string>
     <string name="cert_valid">Valid</string>
     <string name="cert_limited_validity">Limited validity</string>
     <string name="cert_invalid">Invalid</string>
