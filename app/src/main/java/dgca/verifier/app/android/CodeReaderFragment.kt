@@ -160,8 +160,8 @@ class CodeReaderFragment : Fragment(), NavController.OnDestinationChangedListene
                 }
                 View.VISIBLE
             }.apply {
-                binding.validateWith.visibility = this
-                binding.countrySelector.visibility = this
+                // binding.validateWith.visibility = this
+                // binding.countrySelector.visibility = this
             }
         })
     }
