@@ -93,7 +93,7 @@ object NetworkModule {
     ): OkHttpClient {
         val httpClient = getHttpClient(cache).apply {
             addInterceptor(HeaderInterceptor())
-            certificatePinner(certificatePinner)
+            // certificatePinner(certificatePinner)
         }
         addLogging(httpClient)
 
