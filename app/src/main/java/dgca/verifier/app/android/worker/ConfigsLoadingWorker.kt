@@ -18,7 +18,8 @@ class ConfigsLoadingWorker @AssistedInject constructor(
 
     override fun doWork(): Result {
         try {
-            val config = configRepository.getConfig()
+            // TODO: here we should actually get config without local
+            val config = configRepository.local().getConfig()
             Timber.d("Config: $config")
         } catch (error: Throwable) {
             Timber.d(error, "Config Loading Error: $error")

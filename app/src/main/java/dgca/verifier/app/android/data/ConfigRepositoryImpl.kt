@@ -36,6 +36,9 @@ class ConfigRepositoryImpl @Inject constructor(
         return localConfigDataSource
     }
 
+    /** Get the config from web.
+     * We're currently not using it as https://dcc-verifier.digilugu.ee/context returns wrong data.
+     * In order to revert it, we should change ConfigsLoadingWorker. */
     override fun getConfig(): Config {
         return remoteConfigDataSource.getConfig(
             localConfigDataSource.getConfig().getContextUrl(BuildConfig.VERSION_NAME)
